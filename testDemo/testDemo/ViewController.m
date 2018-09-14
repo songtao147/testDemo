@@ -17,8 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *centerBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    centerBtn.center = self.view.center;
+    [self.view addSubview:centerBtn];
+    [centerBtn addTarget:self action:@selector(centerBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)centerBtnClick{
+    
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
