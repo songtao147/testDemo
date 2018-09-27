@@ -10,6 +10,8 @@
 		56ADE6A8215CA1E90080B118 /* dele.png in Resources */ = {isa = PBXBuildFile; fileRef = 56ADE6A5215CA1E90080B118 /* dele.png */; };
 		56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6A7215CA1E90080B118 /* MyTextView.m */; };
 		56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AC215CA1F50080B118 /* TTSViewController.m */; };
+		56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AF215CA2ED0080B118 /* MainViewController.m */; };
+		56ADE6B4215CA7870080B118 /* FanYiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6B3215CA7870080B118 /* FanYiTool.m */; };
 		56B88DE11F5FC0E90057A631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE01F5FC0E90057A631 /* main.m */; };
 		56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE31F5FC0E90057A631 /* AppDelegate.m */; };
 		56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE61F5FC0E90057A631 /* ViewController.m */; };
@@ -24,6 +26,10 @@
 		56ADE6A7215CA1E90080B118 /* MyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
 		56ADE6AB215CA1F50080B118 /* TTSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSViewController.h; sourceTree = "<group>"; };
 		56ADE6AC215CA1F50080B118 /* TTSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSViewController.m; sourceTree = "<group>"; };
+		56ADE6AE215CA2ED0080B118 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		56ADE6AF215CA2ED0080B118 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		56ADE6B2215CA7870080B118 /* FanYiTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FanYiTool.h; sourceTree = "<group>"; };
+		56ADE6B3215CA7870080B118 /* FanYiTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FanYiTool.m; sourceTree = "<group>"; };
 		56B88DDC1F5FC0E90057A631 /* testDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B88DE01F5FC0E90057A631 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56B88DE21F5FC0E90057A631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,8 +68,18 @@
 			children = (
 				56ADE6AB215CA1F50080B118 /* TTSViewController.h */,
 				56ADE6AC215CA1F50080B118 /* TTSViewController.m */,
+				56ADE6B1215CA7640080B118 /* tool */,
 			);
 			path = "TTS&FanYi";
+			sourceTree = "<group>";
+		};
+		56ADE6B1215CA7640080B118 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				56ADE6B2215CA7870080B118 /* FanYiTool.h */,
+				56ADE6B3215CA7870080B118 /* FanYiTool.m */,
+			);
+			path = tool;
 			sourceTree = "<group>";
 		};
 		56B88DD31F5FC0E90057A631 = {
@@ -89,6 +105,8 @@
 				56B88DE31F5FC0E90057A631 /* AppDelegate.m */,
 				56B88DE51F5FC0E90057A631 /* ViewController.h */,
 				56B88DE61F5FC0E90057A631 /* ViewController.m */,
+				56ADE6AE215CA2ED0080B118 /* MainViewController.h */,
+				56ADE6AF215CA2ED0080B118 /* MainViewController.m */,
 				56ADE6AA215CA1F50080B118 /* TTS&FanYi */,
 				56ADE6A4215CA1E90080B118 /* MyTextView */,
 				56B88DE81F5FC0E90057A631 /* Main.storyboard */,
@@ -182,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */,
+				56ADE6B4215CA7870080B118 /* FanYiTool.m in Sources */,
+				56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */,
 				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
 				56B88DE11F5FC0E90057A631 /* main.m in Sources */,
