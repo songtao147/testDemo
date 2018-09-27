@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56ADE6A8215CA1E90080B118 /* dele.png in Resources */ = {isa = PBXBuildFile; fileRef = 56ADE6A5215CA1E90080B118 /* dele.png */; };
+		56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6A7215CA1E90080B118 /* MyTextView.m */; };
+		56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AC215CA1F50080B118 /* TTSViewController.m */; };
 		56B88DE11F5FC0E90057A631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE01F5FC0E90057A631 /* main.m */; };
 		56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE31F5FC0E90057A631 /* AppDelegate.m */; };
 		56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE61F5FC0E90057A631 /* ViewController.m */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56ADE6A5215CA1E90080B118 /* dele.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dele.png; sourceTree = "<group>"; };
+		56ADE6A6215CA1E90080B118 /* MyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextView.h; sourceTree = "<group>"; };
+		56ADE6A7215CA1E90080B118 /* MyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
+		56ADE6AB215CA1F50080B118 /* TTSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSViewController.h; sourceTree = "<group>"; };
+		56ADE6AC215CA1F50080B118 /* TTSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSViewController.m; sourceTree = "<group>"; };
 		56B88DDC1F5FC0E90057A631 /* testDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B88DE01F5FC0E90057A631 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56B88DE21F5FC0E90057A631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +47,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56ADE6A4215CA1E90080B118 /* MyTextView */ = {
+			isa = PBXGroup;
+			children = (
+				56ADE6A5215CA1E90080B118 /* dele.png */,
+				56ADE6A6215CA1E90080B118 /* MyTextView.h */,
+				56ADE6A7215CA1E90080B118 /* MyTextView.m */,
+			);
+			path = MyTextView;
+			sourceTree = "<group>";
+		};
+		56ADE6AA215CA1F50080B118 /* TTS&FanYi */ = {
+			isa = PBXGroup;
+			children = (
+				56ADE6AB215CA1F50080B118 /* TTSViewController.h */,
+				56ADE6AC215CA1F50080B118 /* TTSViewController.m */,
+			);
+			path = "TTS&FanYi";
+			sourceTree = "<group>";
+		};
 		56B88DD31F5FC0E90057A631 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +89,8 @@
 				56B88DE31F5FC0E90057A631 /* AppDelegate.m */,
 				56B88DE51F5FC0E90057A631 /* ViewController.h */,
 				56B88DE61F5FC0E90057A631 /* ViewController.m */,
+				56ADE6AA215CA1F50080B118 /* TTS&FanYi */,
+				56ADE6A4215CA1E90080B118 /* MyTextView */,
 				56B88DE81F5FC0E90057A631 /* Main.storyboard */,
 				56B88DEB1F5FC0E90057A631 /* Assets.xcassets */,
 				56B88DED1F5FC0E90057A631 /* LaunchScreen.storyboard */,
@@ -139,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B88DEF1F5FC0E90057A631 /* LaunchScreen.storyboard in Resources */,
+				56ADE6A8215CA1E90080B118 /* dele.png in Resources */,
 				56B88DEC1F5FC0E90057A631 /* Assets.xcassets in Resources */,
 				56B88DEA1F5FC0E90057A631 /* Main.storyboard in Resources */,
 			);
@@ -152,8 +182,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */,
+				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
 				56B88DE11F5FC0E90057A631 /* main.m in Sources */,
+				56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
