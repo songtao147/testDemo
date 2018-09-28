@@ -1,5 +1,5 @@
 //
-//  FanYiTool.h
+//  MyNetWorkManage.h
 //  testDemo
 //
 //  Created by songtao on 2018/9/27.
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FanYiTool : NSObject
+@interface MyNetWorkManage : NSObject
 
-+ (void)fanyiSrcStr:(NSString * _Nonnull)srcStr toResult:(void(^)(NSString *dstStr))result;
++ (void)requestWithUrlString:(NSString *)urlStr callBack:(void(^)(BOOL normalResult, id resultObj))callback;
 
 @end
 

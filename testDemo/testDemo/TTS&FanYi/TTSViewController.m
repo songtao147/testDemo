@@ -13,13 +13,18 @@
 
 #import "MyTextView.h"
 
+#import "FanYiTool.h"
+#import "SuspensionDisplayView.h"
+
 @interface TTSViewController () <AVSpeechSynthesizerDelegate, UITextViewDelegate>
 
 @property (nonatomic) AVSpeechSynthesizer *speechSynth;
 @property (nonatomic) AVSpeechUtterance *speechUtt;
 
 @property (nonatomic) UITextView *inputTextV;
-@property (nonatomic) UIButton *btn;
+@property (nonatomic) UIButton *btn1;//翻译
+@property (nonatomic) UIButton *btn2;//阅读
+@property (nonatomic) SuspensionDisplayView *showView;
 
 @end
 
@@ -29,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.title = @"文本转语音";
+    self.title = @"英语学习";
     self.view.backgroundColor = UIColor.whiteColor;
     
     MyTextView *textV1 = [[MyTextView alloc] initWithFrame:CGRectMake(kMargin, 75, kScreenW-kMargin*2, 150)];
@@ -43,30 +48,55 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColor.grayColor;
     btn.frame = CGRectMake(kMargin, 235, kScreenW-kMargin*2, 50);
-    [btn setTitle:@"Start" forState:UIControlStateNormal];
+    [btn setTitle:@"翻译" forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    self.btn = btn;
-
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.btn1 = btn;
+    
+    btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = UIColor.grayColor;
+    btn.frame = CGRectMake(kMargin, 295, kScreenW-kMargin*2, 50);
+    [btn setTitle:@"阅读" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:17];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.btn2 = btn;    
 }
 
-- (void)btnClick{
-    NSLog(@"btn is click");
-    
+- (void)btnClick:(UIButton *)btn{
     NSString *string = [_inputTextV.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (string.length<=0) {
         NSLog(@"输入框不可为空！！！");
     }
-    if (self.speechSynth.isSpeaking==NO) {//未播放状态开始播放
-        [self.speechSynth speakUtterance:self.speechUtt];
-    }else{
-        if (self.speechSynth.isPaused==0) {//播放时未暂停时暂停
-            [self.speechSynth pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
-        }else{//暂停时继续播放
-            [self.speechSynth continueSpeaking];
+    
+    if (btn == self.btn1) {
+        __block typeof(self) weaksekf = self;
+        [FanYiTool fanyiSrcStr:string toResult:^(NSString * _Nonnull dstStr) {
+            //NSLog(@"%@", dstStr);
+            weaksekf.showView.content = dstStr;
+            weaksekf.showView.hidden = NO;
+        }];
+    } else {
+        if (self.speechSynth.isSpeaking==NO) {//未播放状态开始播放
+            [self.speechSynth speakUtterance:self.speechUtt];
+        }else{
+            if (self.speechSynth.isPaused==0) {//播放时未暂停时暂停
+                [self.speechSynth pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+            }else{//暂停时继续播放
+                [self.speechSynth continueSpeaking];
+            }
         }
     }
+    
+}
+
+- (SuspensionDisplayView *)showView{
+    if (_showView==nil) {
+        _showView = [[SuspensionDisplayView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [self.view addSubview:_showView];
+    }
+    return _showView;
 }
 
 #pragma mark - 生成AVSpeechSynthesizer
@@ -85,31 +115,31 @@
 #pragma mark AVSpeechSynthesizerDelegate
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didStartSpeechUtterance:(AVSpeechUtterance*)utterance{
     //开始
-    [self.btn setTitle:@"Pause" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"Pause" forState:UIControlStateNormal];
     NSLog(@"didStartSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance{
     //完成
-    [self.btn setTitle:@"Start" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"Start" forState:UIControlStateNormal];
     NSLog(@"didFinishSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance*)utterance{
     //暂停
-    [self.btn setTitle:@"Continue" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"Continue" forState:UIControlStateNormal];
     NSLog(@"didPauseSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance*)utterance{
     //恢复
-    [self.btn setTitle:@"Pause" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"Pause" forState:UIControlStateNormal];
     NSLog(@"didContinueSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance*)utterance{
     //取消
-    [self.btn setTitle:@"Start" forState:UIControlStateNormal];
+    [self.btn2 setTitle:@"Start" forState:UIControlStateNormal];
 }
 
 #pragma mark - 生成AVSpeechUtterance
