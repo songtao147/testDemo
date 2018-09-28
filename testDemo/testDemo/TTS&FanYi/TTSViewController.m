@@ -13,7 +13,7 @@
 
 #import "MyTextView.h"
 
-#import "FanYiTool.h"
+#import "BaiduFanYiTool.h"
 #import "SuspensionDisplayView.h"
 
 @interface TTSViewController () <AVSpeechSynthesizerDelegate, UITextViewDelegate>
@@ -72,7 +72,7 @@
     
     if (btn == self.btn1) {
         __block typeof(self) weaksekf = self;
-        [FanYiTool fanyiSrcStr:string toResult:^(NSString * _Nonnull dstStr) {
+        [BaiduFanYiTool fanyiSrcStr:string toResult:^(NSString * _Nonnull dstStr) {
             //NSLog(@"%@", dstStr);
             weaksekf.showView.content = dstStr;
             weaksekf.showView.hidden = NO;

@@ -20,9 +20,15 @@
 }
 */
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textchanged) name:UITextViewTextDidChangeNotification object:self];
+    }
+    return self;
+}
+
 - (void)addClearButtonWith:(UIImage *)deleImg{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textchanged) name:UITextViewTextDidChangeNotification object:nil];
-    
+        
     _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_clearBtn setImage:[UIImage imageNamed:@"dele"] forState:UIControlStateNormal];
     [_clearBtn addTarget:self action:@selector(clearText) forControlEvents:UIControlEventTouchUpInside];

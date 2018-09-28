@@ -1,12 +1,12 @@
 //
-//  FanYiTool.m
+//  BaiduFanYiTool.m
 //  testDemo
 //
 //  Created by songtao on 2018/9/27.
 //  Copyright © 2018年 ryan. All rights reserved.
 //
 
-#import "FanYiTool.h"
+#import "BaiduFanYiTool.h"
 #import "MyNetWorkManage.h"
 #import "NSString+Encryption.h"
 //百度翻译（http://api.fanyi.baidu.com/api/trans/product/apidoc）
@@ -14,8 +14,11 @@
 #define APPID @"20180927000212590"
 #define APPKEY @"W3YKxY_Ajwoj_udvc2ij"
 
-@implementation FanYiTool
+@implementation BaiduFanYiTool
 
+/**
+ 英译中
+ */
 + (void)fanyiSrcStr:(NSString * _Nonnull)srcStr toResult:(void (^)(NSString * _Nonnull))result{
     
     NSString *salt = [NSString stringWithFormat:@"%010u", arc4random()%1000000000];

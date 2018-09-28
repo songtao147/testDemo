@@ -11,7 +11,7 @@
 		56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6A7215CA1E90080B118 /* MyTextView.m */; };
 		56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AC215CA1F50080B118 /* TTSViewController.m */; };
 		56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AF215CA2ED0080B118 /* MainViewController.m */; };
-		56ADE6B4215CA7870080B118 /* FanYiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6B3215CA7870080B118 /* FanYiTool.m */; };
+		56ADE6B4215CA7870080B118 /* BaiduFanYiTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6B3215CA7870080B118 /* BaiduFanYiTool.m */; };
 		56ADE6B8215CAA830080B118 /* MyNetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6B7215CAA830080B118 /* MyNetWorkManage.m */; };
 		56ADE6BF215CC59C0080B118 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6BE215CC59C0080B118 /* NSString+Encryption.m */; };
 		56ADE6C6215CDE050080B118 /* SuspensionDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6C5215CDE050080B118 /* SuspensionDisplayView.m */; };
@@ -34,8 +34,8 @@
 		56ADE6AC215CA1F50080B118 /* TTSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSViewController.m; sourceTree = "<group>"; };
 		56ADE6AE215CA2ED0080B118 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		56ADE6AF215CA2ED0080B118 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		56ADE6B2215CA7870080B118 /* FanYiTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FanYiTool.h; sourceTree = "<group>"; };
-		56ADE6B3215CA7870080B118 /* FanYiTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FanYiTool.m; sourceTree = "<group>"; };
+		56ADE6B2215CA7870080B118 /* BaiduFanYiTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduFanYiTool.h; sourceTree = "<group>"; };
+		56ADE6B3215CA7870080B118 /* BaiduFanYiTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiduFanYiTool.m; sourceTree = "<group>"; };
 		56ADE6B6215CAA830080B118 /* MyNetWorkManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNetWorkManage.h; sourceTree = "<group>"; };
 		56ADE6B7215CAA830080B118 /* MyNetWorkManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNetWorkManage.m; sourceTree = "<group>"; };
 		56ADE6BD215CC59C0080B118 /* NSString+Encryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
@@ -82,18 +82,17 @@
 			children = (
 				56ADE6AB215CA1F50080B118 /* TTSViewController.h */,
 				56ADE6AC215CA1F50080B118 /* TTSViewController.m */,
-				56ADE6B1215CA7640080B118 /* tool */,
 			);
 			path = "TTS&FanYi";
 			sourceTree = "<group>";
 		};
-		56ADE6B1215CA7640080B118 /* tool */ = {
+		56ADE6B1215CA7640080B118 /* BaiduFanYiTool */ = {
 			isa = PBXGroup;
 			children = (
-				56ADE6B2215CA7870080B118 /* FanYiTool.h */,
-				56ADE6B3215CA7870080B118 /* FanYiTool.m */,
+				56ADE6B2215CA7870080B118 /* BaiduFanYiTool.h */,
+				56ADE6B3215CA7870080B118 /* BaiduFanYiTool.m */,
 			);
-			path = tool;
+			path = BaiduFanYiTool;
 			sourceTree = "<group>";
 		};
 		56ADE6B5215CAA640080B118 /* MyNetWorkManage */ = {
@@ -123,6 +122,24 @@
 			path = SuspensionDisplayView;
 			sourceTree = "<group>";
 		};
+		56ADE6C7215E015C0080B118 /* CommonTools */ = {
+			isa = PBXGroup;
+			children = (
+				56ADE6B5215CAA640080B118 /* MyNetWorkManage */,
+				56ADE6B1215CA7640080B118 /* BaiduFanYiTool */,
+			);
+			path = CommonTools;
+			sourceTree = "<group>";
+		};
+		56ADE6C8215E023C0080B118 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				56ADE6C3215CDE050080B118 /* SuspensionDisplayView */,
+				56ADE6A4215CA1E90080B118 /* MyTextView */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
 		56B88DD31F5FC0E90057A631 = {
 			isa = PBXGroup;
 			children = (
@@ -150,11 +167,10 @@
 				56B88DE61F5FC0E90057A631 /* ViewController.m */,
 				56ADE6AE215CA2ED0080B118 /* MainViewController.h */,
 				56ADE6AF215CA2ED0080B118 /* MainViewController.m */,
-				56ADE6C3215CDE050080B118 /* SuspensionDisplayView */,
+				56ADE6C8215E023C0080B118 /* CommonViews */,
+				56ADE6C7215E015C0080B118 /* CommonTools */,
 				56ADE6B9215CC00D0080B118 /* Categary */,
-				56ADE6B5215CAA640080B118 /* MyNetWorkManage */,
 				56ADE6AA215CA1F50080B118 /* TTS&FanYi */,
-				56ADE6A4215CA1E90080B118 /* MyTextView */,
 				56B88DE81F5FC0E90057A631 /* Main.storyboard */,
 				56B88DEB1F5FC0E90057A631 /* Assets.xcassets */,
 				56B88DED1F5FC0E90057A631 /* LaunchScreen.storyboard */,
@@ -307,7 +323,7 @@
 			files = (
 				56ADE6C6215CDE050080B118 /* SuspensionDisplayView.m in Sources */,
 				56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */,
-				56ADE6B4215CA7870080B118 /* FanYiTool.m in Sources */,
+				56ADE6B4215CA7870080B118 /* BaiduFanYiTool.m in Sources */,
 				56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */,
 				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
@@ -455,6 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K856TWSZPZ;
 				INFOPLIST_FILE = testDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quweile.testDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K856TWSZPZ;
 				INFOPLIST_FILE = testDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quweile.testDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
