@@ -15,6 +15,10 @@
 		56ADE6B8215CAA830080B118 /* MyNetWorkManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6B7215CAA830080B118 /* MyNetWorkManage.m */; };
 		56ADE6BF215CC59C0080B118 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6BE215CC59C0080B118 /* NSString+Encryption.m */; };
 		56ADE6C6215CDE050080B118 /* SuspensionDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6C5215CDE050080B118 /* SuspensionDisplayView.m */; };
+		56ADE6CC215E146A0080B118 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6CB215E146A0080B118 /* UIView+Layout.m */; };
+		56ADE6CF215E18B30080B118 /* SpeechSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6CE215E18B30080B118 /* SpeechSettingController.m */; };
+		56ADE6DF215F80F20080B118 /* MySliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6DE215F80F20080B118 /* MySliderView.m */; };
+		56ADE6E1215F81120080B118 /* MySliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56ADE6E0215F81120080B118 /* MySliderView.xib */; };
 		56B88DE11F5FC0E90057A631 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE01F5FC0E90057A631 /* main.m */; };
 		56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE31F5FC0E90057A631 /* AppDelegate.m */; };
 		56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B88DE61F5FC0E90057A631 /* ViewController.m */; };
@@ -42,6 +46,14 @@
 		56ADE6BE215CC59C0080B118 /* NSString+Encryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
 		56ADE6C4215CDE050080B118 /* SuspensionDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspensionDisplayView.h; sourceTree = "<group>"; };
 		56ADE6C5215CDE050080B118 /* SuspensionDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspensionDisplayView.m; sourceTree = "<group>"; };
+		56ADE6C9215E14390080B118 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		56ADE6CA215E146A0080B118 /* UIView+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		56ADE6CB215E146A0080B118 /* UIView+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		56ADE6CD215E18B30080B118 /* SpeechSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechSettingController.h; sourceTree = "<group>"; };
+		56ADE6CE215E18B30080B118 /* SpeechSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechSettingController.m; sourceTree = "<group>"; };
+		56ADE6DD215F80F20080B118 /* MySliderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySliderView.h; sourceTree = "<group>"; };
+		56ADE6DE215F80F20080B118 /* MySliderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySliderView.m; sourceTree = "<group>"; };
+		56ADE6E0215F81120080B118 /* MySliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySliderView.xib; sourceTree = "<group>"; };
 		56B88DDC1F5FC0E90057A631 /* testDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B88DE01F5FC0E90057A631 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56B88DE21F5FC0E90057A631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +94,11 @@
 			children = (
 				56ADE6AB215CA1F50080B118 /* TTSViewController.h */,
 				56ADE6AC215CA1F50080B118 /* TTSViewController.m */,
+				56ADE6CD215E18B30080B118 /* SpeechSettingController.h */,
+				56ADE6CE215E18B30080B118 /* SpeechSettingController.m */,
+				56ADE6DD215F80F20080B118 /* MySliderView.h */,
+				56ADE6DE215F80F20080B118 /* MySliderView.m */,
+				56ADE6E0215F81120080B118 /* MySliderView.xib */,
 			);
 			path = "TTS&FanYi";
 			sourceTree = "<group>";
@@ -109,6 +126,8 @@
 			children = (
 				56ADE6BD215CC59C0080B118 /* NSString+Encryption.h */,
 				56ADE6BE215CC59C0080B118 /* NSString+Encryption.m */,
+				56ADE6CA215E146A0080B118 /* UIView+Layout.h */,
+				56ADE6CB215E146A0080B118 /* UIView+Layout.m */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -175,6 +194,7 @@
 				56B88DEB1F5FC0E90057A631 /* Assets.xcassets */,
 				56B88DED1F5FC0E90057A631 /* LaunchScreen.storyboard */,
 				56B88DF01F5FC0E90057A631 /* Info.plist */,
+				56ADE6C9215E14390080B118 /* PrefixHeader.pch */,
 				56B88DDF1F5FC0E90057A631 /* Supporting Files */,
 			);
 			path = testDemo;
@@ -269,6 +289,7 @@
 				56B88DEF1F5FC0E90057A631 /* LaunchScreen.storyboard in Resources */,
 				56ADE6A8215CA1E90080B118 /* dele.png in Resources */,
 				56B88DEC1F5FC0E90057A631 /* Assets.xcassets in Resources */,
+				56ADE6E1215F81120080B118 /* MySliderView.xib in Resources */,
 				56B88DEA1F5FC0E90057A631 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,9 +347,12 @@
 				56ADE6B4215CA7870080B118 /* BaiduFanYiTool.m in Sources */,
 				56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */,
 				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
+				56ADE6DF215F80F20080B118 /* MySliderView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
+				56ADE6CF215E18B30080B118 /* SpeechSettingController.m in Sources */,
 				56ADE6BF215CC59C0080B118 /* NSString+Encryption.m in Sources */,
 				56ADE6B8215CAA830080B118 /* MyNetWorkManage.m in Sources */,
+				56ADE6CC215E146A0080B118 /* UIView+Layout.m in Sources */,
 				56B88DE11F5FC0E90057A631 /* main.m in Sources */,
 				56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */,
 			);

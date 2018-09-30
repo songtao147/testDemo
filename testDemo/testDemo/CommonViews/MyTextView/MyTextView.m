@@ -10,46 +10,40 @@
 
 #define imgH 30
 
+@interface MyTextView ()
+
+@property (nonatomic) UIButton *clearBtn;
+
+@end
+
 @implementation MyTextView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-- (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textchanged) name:UITextViewTextDidChangeNotification object:self];
-    }
-    return self;
-}
-
-- (void)addClearButtonWith:(UIImage *)deleImg{
-        
-    _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_clearBtn setImage:[UIImage imageNamed:@"dele"] forState:UIControlStateNormal];
-    [_clearBtn addTarget:self action:@selector(clearText) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_clearBtn];
-    _clearBtn.hidden = YES;
+- (void)setHaveClearBtn:(BOOL)haveClearBtn{
+    _haveClearBtn = haveClearBtn;
     
-    _clearBtn.frame = CGRectMake(self.bounds.size.width-imgH, self.bounds.size.height/2-imgH/2, imgH, imgH);
-    UIEdgeInsets insets = self.contentInset;
-    insets.right += imgH;
-    self.contentInset = insets;
+    if (_haveClearBtn) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textchanged) name:UITextViewTextDidChangeNotification object:self];
+
+        _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_clearBtn setImage:[UIImage imageNamed:@"dele"] forState:UIControlStateNormal];
+        [_clearBtn addTarget:self action:@selector(clearText) forControlEvents:UIControlEventTouchUpInside];
+        [self.superview addSubview:_clearBtn];
+        _clearBtn.hidden = YES;
+        
+        _clearBtn.frame = CGRectMake(CGRectGetMaxX(self.frame)-imgH, CGRectGetMidY(self.frame)-imgH/2, imgH, imgH);
+        UIEdgeInsets insets = self.contentInset;
+        insets.right += imgH;
+        self.contentInset = insets;
+    }
 }
 
 - (void)textchanged{
-    NSLog(@"\ntext = %@", self.text);
-    if (_clearBtn.hidden == self.text.length) {
-        _clearBtn.hidden = !self.text.length;
+    if (_clearBtn.hidden == self.text.length>0) {
+        _clearBtn.hidden = !(self.text.length>0);
     }
 }
 
 - (void)clearText{
-    NSLog(@"clearBtn is click!!!");
     [self setText:@""];
 }
 
@@ -59,7 +53,13 @@
 }
 
 - (void)layoutSubviews{
-    _clearBtn.frame = CGRectMake(self.bounds.size.width-imgH, self.bounds.size.height/2-imgH/2, imgH, imgH);
+    
+}
+
+- (void)dealloc{
+    [_clearBtn removeFromSuperview];
+    _clearBtn = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

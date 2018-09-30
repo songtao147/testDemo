@@ -12,9 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTextView : UITextView
 
-@property (nonatomic) UIButton *clearBtn;
-
-- (void)addClearButtonWith:(UIImage *)deleImg;
+@property (nonatomic, assign) BOOL haveClearBtn;
 
 @end
 

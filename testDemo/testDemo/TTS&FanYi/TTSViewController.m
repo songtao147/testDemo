@@ -7,23 +7,30 @@
 //
 
 #import "TTSViewController.h"
+
+#import "SpeechSettingController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "MyTextView.h"
+#import "SuspensionDisplayView.h"
+#import "BaiduFanYiTool.h"
+
 #define kMargin 10
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 
-#import "MyTextView.h"
-
-#import "BaiduFanYiTool.h"
-#import "SuspensionDisplayView.h"
-
 @interface TTSViewController () <AVSpeechSynthesizerDelegate, UITextViewDelegate>
+{
+    float _pitchMultiplier;
+    float _volume;
+    float _rate;
+}
 
 @property (nonatomic) AVSpeechSynthesizer *speechSynth;
 @property (nonatomic) AVSpeechUtterance *speechUtt;
 
 @property (nonatomic) UITextView *inputTextV;
-@property (nonatomic) UIButton *btn1;//翻译
-@property (nonatomic) UIButton *btn2;//阅读
+@property (nonatomic) UIButton *transbtn;//翻译
+@property (nonatomic) UIButton *speechbtn;//阅读
+@property (nonatomic) UIButton *pinspeechbtn;//拼读
 @property (nonatomic) SuspensionDisplayView *showView;
 
 @end
@@ -37,11 +44,13 @@
     self.title = @"英语学习";
     self.view.backgroundColor = UIColor.whiteColor;
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"语音设置" style:UIBarButtonItemStyleDone target:self action:@selector(speechSetting)];
+    
     MyTextView *textV1 = [[MyTextView alloc] initWithFrame:CGRectMake(kMargin, 75, kScreenW-kMargin*2, 150)];
     textV1.backgroundColor = UIColor.grayColor;
     textV1.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:textV1];
-    [textV1 addClearButtonWith:[UIImage imageNamed:@""]];
+    //textV1.haveClearBtn = YES;
     textV1.delegate = self;
     _inputTextV = textV1;
     
@@ -52,7 +61,7 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.btn1 = btn;
+    self.transbtn = btn;
     
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColor.grayColor;
@@ -61,16 +70,38 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.btn2 = btn;    
+    self.speechbtn = btn;
+    
+    btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = UIColor.grayColor;
+    btn.frame = CGRectMake(kMargin, 355, kScreenW-kMargin*2, 50);
+    [btn setTitle:@"拼读" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:17];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.pinspeechbtn = btn;
+    
+    [self defaultValue];
+}
+
+- (void)speechSetting{
+    __block typeof(self) weaksekf = self;
+    SpeechSettingController *controller = [SpeechSettingController new];
+    [controller setpvalue:_pitchMultiplier vvalue:_volume rvalue:_rate];
+    controller.saveSettingValueBlock = ^(float pitchMultiplier, float volume, float rate) {
+        [weaksekf changeValueWithPitchMultiplier:pitchMultiplier volume:volume rate:rate];
+    };
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)btnClick:(UIButton *)btn{
     NSString *string = [_inputTextV.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (string.length<=0) {
         NSLog(@"输入框不可为空！！！");
+        return;
     }
     
-    if (btn == self.btn1) {
+    if (btn == self.transbtn) {
         __block typeof(self) weaksekf = self;
         [BaiduFanYiTool fanyiSrcStr:string toResult:^(NSString * _Nonnull dstStr) {
             //NSLog(@"%@", dstStr);
@@ -78,6 +109,26 @@
             weaksekf.showView.hidden = NO;
         }];
     } else {
+        if (btn == self.pinspeechbtn) {
+            NSMutableString *mutableStr = [NSMutableString stringWithString:string];
+            for (NSInteger i=0; i+1<mutableStr.length; i++) {
+                NSString *str = [mutableStr substringWithRange:NSMakeRange(i, 1)];
+                if ([str isEqualToString:@" "]) {
+                    continue;
+                }else{
+                    NSString *next = [mutableStr substringWithRange:NSMakeRange(i+1, 1)];
+                    if ([next isEqualToString:@" "]) {
+                        continue;
+                    }else{
+                        [mutableStr insertString:@" " atIndex:i+1];
+                        i++;
+                    }
+                }
+            }
+            _inputTextV.text = mutableStr;
+            _speechUtt = nil;
+        }
+        
         if (self.speechSynth.isSpeaking==NO) {//未播放状态开始播放
             [self.speechSynth speakUtterance:self.speechUtt];
         }else{
@@ -88,7 +139,6 @@
             }
         }
     }
-    
 }
 
 - (SuspensionDisplayView *)showView{
@@ -115,48 +165,68 @@
 #pragma mark AVSpeechSynthesizerDelegate
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didStartSpeechUtterance:(AVSpeechUtterance*)utterance{
     //开始
-    [self.btn2 setTitle:@"Pause" forState:UIControlStateNormal];
-    NSLog(@"didStartSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
-}
-
-- (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance{
-    //完成
-    [self.btn2 setTitle:@"Start" forState:UIControlStateNormal];
-    NSLog(@"didFinishSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
+    
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance*)utterance{
     //暂停
-    [self.btn2 setTitle:@"Continue" forState:UIControlStateNormal];
-    NSLog(@"didPauseSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
+    
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance*)utterance{
     //恢复
-    [self.btn2 setTitle:@"Pause" forState:UIControlStateNormal];
-    NSLog(@"didContinueSpeechUtterance，%d, %d", self.speechSynth.speaking, self.speechSynth.paused);
+    
+}
+
+- (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance*)utterance{
+    //完成
+    
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer*)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance*)utterance{
     //取消
-    [self.btn2 setTitle:@"Start" forState:UIControlStateNormal];
+    
 }
 
 #pragma mark - 生成AVSpeechUtterance
 /**
  Utterance:话语
+ .pitchMultiplier   //音调调节  调节范围 ：[0.5 - 2]  默认是：1
+ .volume            //音量调节  调节范围 ：[0-1]  默认是 ：1
+ .rate              //语速调节  调节范围 ：[0-1]  0最慢  1 最快
  */
 - (AVSpeechUtterance *)speechUtt{
     if (_speechUtt==nil) {
         _speechUtt = [AVSpeechUtterance speechUtteranceWithString:self.inputTextV.text];
-        _speechUtt.pitchMultiplier = 1;//音调调节  调节范围 ：[0.5 - 2]  默认是：1
-        _speechUtt.volume = 1;//音量调节  调节范围 ：[0-1]  默认是 ：1
-        _speechUtt.rate = 0.5;//语速调节  调节范围 ：[0-1]  0最慢  1 最快
         //设置语种
         AVSpeechSynthesisVoice *language = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
         _speechUtt.voice = language;
     }
+    _speechUtt.pitchMultiplier = _pitchMultiplier;
+    _speechUtt.volume = _volume;
+    _speechUtt.rate = _rate;
     return _speechUtt;
+}
+
+- (void)defaultValue{
+    if (_pitchMultiplier==0) {
+        _pitchMultiplier = 1.0;
+        _volume = 1.0;
+        _rate = 0.5;
+    }
+}
+
+- (void)changeValueWithPitchMultiplier:(float)pitchMultiplier volume:(float)volume rate:(float)rate{
+    _pitchMultiplier = pitchMultiplier;
+    _volume = volume;
+    _rate = rate;
+ 
+    //播放语音时，修改参数无效。
+//    if (_speechUtt) {
+//        _speechUtt.pitchMultiplier = _pitchMultiplier;
+//        _speechUtt.volume = _volume;
+//        _speechUtt.rate = _rate;
+//    }
 }
 
 #pragma mark - UITextViewDelegate
@@ -173,6 +243,12 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     [self.view endEditing:YES];
+}
+
+- (void)dealloc{
+    if (self.speechSynth.isSpeaking) {
+        [self.speechSynth stopSpeakingAtBoundary:AVSpeechBoundaryWord];
+    }
 }
 
 @end
