@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5644F8EA21884A98002911BA /* LoginTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8E921884A98002911BA /* LoginTestViewController.m */; };
+		5644F8EF21884B77002911BA /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8EE21884B77002911BA /* CaptchaView.m */; };
+		5644F8F2218995BB002911BA /* PaySafePwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8F1218995BB002911BA /* PaySafePwdView.m */; };
+		5644F8F921899C90002911BA /* AnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8F821899C90002911BA /* AnimationsViewController.m */; };
 		56ADE6A8215CA1E90080B118 /* dele.png in Resources */ = {isa = PBXBuildFile; fileRef = 56ADE6A5215CA1E90080B118 /* dele.png */; };
 		56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6A7215CA1E90080B118 /* MyTextView.m */; };
 		56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ADE6AC215CA1F50080B118 /* TTSViewController.m */; };
@@ -25,12 +29,24 @@
 		56B88DEA1F5FC0E90057A631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B88DE81F5FC0E90057A631 /* Main.storyboard */; };
 		56B88DEC1F5FC0E90057A631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B88DEB1F5FC0E90057A631 /* Assets.xcassets */; };
 		56B88DEF1F5FC0E90057A631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B88DED1F5FC0E90057A631 /* LaunchScreen.storyboard */; };
+		56CB399F218C192E005C8A65 /* SingleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CB399E218C192E005C8A65 /* SingleObject.m */; };
+		56CB39A6218C5066005C8A65 /* DesignPatternsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CB39A5218C5066005C8A65 /* DesignPatternsViewController.m */; };
+		56CB39A9218C5126005C8A65 /* SingletonTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CB39A8218C5126005C8A65 /* SingletonTestViewController.m */; };
+		56F6356B217971380059BFA0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F6356A217971370059BFA0 /* TestViewController.m */; };
 		93A5F86C2E8D46BA356E4154 /* libPods-testDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2B99A6273BA5651ED76F32 /* libPods-testDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B2B99A6273BA5651ED76F32 /* libPods-testDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		342532960FA2DDE9977C7DF6 /* Pods-testDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testDemo/Pods-testDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5644F8E821884A98002911BA /* LoginTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTestViewController.h; sourceTree = "<group>"; };
+		5644F8E921884A98002911BA /* LoginTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTestViewController.m; sourceTree = "<group>"; };
+		5644F8ED21884B77002911BA /* CaptchaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
+		5644F8EE21884B77002911BA /* CaptchaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaView.m; sourceTree = "<group>"; };
+		5644F8F0218995BB002911BA /* PaySafePwdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaySafePwdView.h; sourceTree = "<group>"; };
+		5644F8F1218995BB002911BA /* PaySafePwdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaySafePwdView.m; sourceTree = "<group>"; };
+		5644F8F721899C90002911BA /* AnimationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationsViewController.h; sourceTree = "<group>"; };
+		5644F8F821899C90002911BA /* AnimationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationsViewController.m; sourceTree = "<group>"; };
 		56ADE6A5215CA1E90080B118 /* dele.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dele.png; sourceTree = "<group>"; };
 		56ADE6A6215CA1E90080B118 /* MyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextView.h; sourceTree = "<group>"; };
 		56ADE6A7215CA1E90080B118 /* MyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
@@ -64,6 +80,15 @@
 		56B88DEB1F5FC0E90057A631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B88DEE1F5FC0E90057A631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56B88DF01F5FC0E90057A631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56CB399D218C192E005C8A65 /* SingleObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleObject.h; sourceTree = "<group>"; };
+		56CB399E218C192E005C8A65 /* SingleObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleObject.m; sourceTree = "<group>"; };
+		56CB39A0218C3660005C8A65 /* SingletonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonDefine.h; sourceTree = "<group>"; };
+		56CB39A4218C5066005C8A65 /* DesignPatternsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignPatternsViewController.h; sourceTree = "<group>"; };
+		56CB39A5218C5066005C8A65 /* DesignPatternsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignPatternsViewController.m; sourceTree = "<group>"; };
+		56CB39A7218C5125005C8A65 /* SingletonTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingletonTestViewController.h; sourceTree = "<group>"; };
+		56CB39A8218C5126005C8A65 /* SingletonTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingletonTestViewController.m; sourceTree = "<group>"; };
+		56F63569217971370059BFA0 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		56F6356A217971370059BFA0 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		E6419D572266FCF08A3D5F36 /* Pods-testDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-testDemo/Pods-testDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +104,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5644F8E721884A71002911BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5644F8E821884A98002911BA /* LoginTestViewController.h */,
+				5644F8E921884A98002911BA /* LoginTestViewController.m */,
+				5644F8EC21884B0B002911BA /* PassWordView */,
+				5644F8EB21884AFD002911BA /* CaptchaView */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5644F8EB21884AFD002911BA /* CaptchaView */ = {
+			isa = PBXGroup;
+			children = (
+				5644F8ED21884B77002911BA /* CaptchaView.h */,
+				5644F8EE21884B77002911BA /* CaptchaView.m */,
+			);
+			path = CaptchaView;
+			sourceTree = "<group>";
+		};
+		5644F8EC21884B0B002911BA /* PassWordView */ = {
+			isa = PBXGroup;
+			children = (
+				5644F8F0218995BB002911BA /* PaySafePwdView.h */,
+				5644F8F1218995BB002911BA /* PaySafePwdView.m */,
+			);
+			path = PassWordView;
+			sourceTree = "<group>";
+		};
+		5644F8F321899B4E002911BA /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5644F8F721899C90002911BA /* AnimationsViewController.h */,
+				5644F8F821899C90002911BA /* AnimationsViewController.m */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		56ADE6A4215CA1E90080B118 /* MyTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +249,11 @@
 				56B88DE61F5FC0E90057A631 /* ViewController.m */,
 				56ADE6AE215CA2ED0080B118 /* MainViewController.h */,
 				56ADE6AF215CA2ED0080B118 /* MainViewController.m */,
+				56F63569217971370059BFA0 /* TestViewController.h */,
+				56F6356A217971370059BFA0 /* TestViewController.m */,
+				56CB399C218C1908005C8A65 /* DesignPatterns */,
+				5644F8F321899B4E002911BA /* Animations */,
+				5644F8E721884A71002911BA /* Login */,
 				56ADE6C8215E023C0080B118 /* CommonViews */,
 				56ADE6C7215E015C0080B118 /* CommonTools */,
 				56ADE6B9215CC00D0080B118 /* Categary */,
@@ -206,6 +274,20 @@
 				56B88DE01F5FC0E90057A631 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56CB399C218C1908005C8A65 /* DesignPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				56CB39A0218C3660005C8A65 /* SingletonDefine.h */,
+				56CB399D218C192E005C8A65 /* SingleObject.h */,
+				56CB399E218C192E005C8A65 /* SingleObject.m */,
+				56CB39A4218C5066005C8A65 /* DesignPatternsViewController.h */,
+				56CB39A5218C5066005C8A65 /* DesignPatternsViewController.m */,
+				56CB39A7218C5125005C8A65 /* SingletonTestViewController.h */,
+				56CB39A8218C5126005C8A65 /* SingletonTestViewController.m */,
+			);
+			path = DesignPatterns;
 			sourceTree = "<group>";
 		};
 		B5758C7BCE083C53AF193DAC /* Frameworks */ = {
@@ -344,17 +426,25 @@
 			files = (
 				56ADE6C6215CDE050080B118 /* SuspensionDisplayView.m in Sources */,
 				56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */,
+				56F6356B217971380059BFA0 /* TestViewController.m in Sources */,
 				56ADE6B4215CA7870080B118 /* BaiduFanYiTool.m in Sources */,
 				56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */,
+				5644F8F921899C90002911BA /* AnimationsViewController.m in Sources */,
+				5644F8EF21884B77002911BA /* CaptchaView.m in Sources */,
 				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
 				56ADE6DF215F80F20080B118 /* MySliderView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
+				56CB399F218C192E005C8A65 /* SingleObject.m in Sources */,
 				56ADE6CF215E18B30080B118 /* SpeechSettingController.m in Sources */,
+				56CB39A9218C5126005C8A65 /* SingletonTestViewController.m in Sources */,
 				56ADE6BF215CC59C0080B118 /* NSString+Encryption.m in Sources */,
+				5644F8F2218995BB002911BA /* PaySafePwdView.m in Sources */,
 				56ADE6B8215CAA830080B118 /* MyNetWorkManage.m in Sources */,
+				5644F8EA21884A98002911BA /* LoginTestViewController.m in Sources */,
 				56ADE6CC215E146A0080B118 /* UIView+Layout.m in Sources */,
 				56B88DE11F5FC0E90057A631 /* main.m in Sources */,
 				56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */,
+				56CB39A6218C5066005C8A65 /* DesignPatternsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -480,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,8 +584,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K856TWSZPZ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./testDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = testDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quweile.testDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,8 +600,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K856TWSZPZ;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./testDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = testDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quweile.testDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

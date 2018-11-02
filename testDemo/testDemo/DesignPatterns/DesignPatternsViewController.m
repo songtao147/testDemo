@@ -1,46 +1,32 @@
 //
-//  MainViewController.m
+//  DesignPatternsViewController.m
 //  testDemo
 //
-//  Created by songtao on 2018/9/27.
-//  Copyright © 2018年 ryan. All rights reserved.
+//  Created by songtao on 2018/11/2.
+//  Copyright © 2018 ryan. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "DesignPatternsViewController.h"
 
-@interface MainViewController ()
+@interface DesignPatternsViewController ()
 
 @property (nonatomic) NSMutableArray *dataArr;
 
 @end
 
-static NSString *reuseIdentifier = @"MainTableViewCellReuseIdentifier";
+@implementation DesignPatternsViewController
 
-@implementation MainViewController
+static NSString *reuseIdentifier = @"DesignPatternsCellReuseIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"测试demo";    
+    self.title = @"设计模式";
     
     _dataArr = [NSMutableArray array];
     
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"测试页面", @"Test", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"单利模式", @"SingletonTest", nil];
     [_dataArr addObject:dic];
-    NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:@"登录相关(验证码、支付密码输入)", @"LoginTest", nil];
-    [_dataArr addObject:dic1];
-    NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:@"常见动画特效", @"Animations", nil];
-    [_dataArr addObject:dic2];
-    NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:@"文本转语音（英语翻译）", @"TTS", nil];
-    [_dataArr addObject:dic3];
-    NSDictionary *dic4 = [NSDictionary dictionaryWithObjectsAndKeys:@"设计模式", @"DesignPatterns", nil];
-    [_dataArr addObject:dic4];
-    
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];//必需注册
     self.tableView.tableFooterView = [UIView new];

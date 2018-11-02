@@ -57,7 +57,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColor.grayColor;
     btn.frame = CGRectMake(kMargin, 235, kScreenW-kMargin*2, 50);
-    [btn setTitle:@"翻译" forState:UIControlStateNormal];
+    [btn setTitle:@"英译汉" forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -66,7 +66,7 @@
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColor.grayColor;
     btn.frame = CGRectMake(kMargin, 295, kScreenW-kMargin*2, 50);
-    [btn setTitle:@"阅读" forState:UIControlStateNormal];
+    [btn setTitle:@"文本转语音" forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -246,8 +246,8 @@
 }
 
 - (void)dealloc{
-    if (self.speechSynth.isSpeaking) {
-        [self.speechSynth stopSpeakingAtBoundary:AVSpeechBoundaryWord];
+    if (_speechSynth.isSpeaking) {
+        [_speechSynth stopSpeakingAtBoundary:AVSpeechBoundaryWord];
     }
 }
 
