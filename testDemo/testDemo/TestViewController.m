@@ -7,7 +7,7 @@
 //
 
 #import "TestViewController.h"
-
+#import "Person.h"
 @interface TestViewController ()
 
 @end
@@ -24,10 +24,48 @@
 }
 
 - (void)test{
-    [self createTimer];
+    //[self createTimer];
+    
+    Person *p1 = [self personWith:1001 name:@"abca"];
+    Person *p2 = [self personWith:1002 name:@"abcb"];
+    Person *p3 = [self personWith:1003 name:@"abcc"];
+    
+    NSLog(@"p1 = %@, p2 = %@, p3 = %@", p1, p2, p3);
+    
+    NSMutableArray *arr1 = [NSMutableArray arrayWithObjects:p1, p2, p3, nil];
+    
+    NSLog(@"arr= %@", arr1);
+    
+    //NSMutableArray *arr2 = [NSMutableArray arrayWithArray:arr1];
+    NSMutableArray *arr2 = [arr1 filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"pid = %@", @(1002)]].mutableCopy;
+//    for (NSInteger i =0 ; i<arr1.count; i++) {
+//        [arr2 addObject:arr1[i]];
+//    }
+    
+    NSLog(@"arr= %@", arr2);
+    
+    Person *item = [arr2 objectAtIndex:0];
+    
+    NSLog(@"item = %@", item);
+    
+    item.name = @"abc2";
+    
+    NSLog(@"item.name = %@", p2.name);
 }
 
+- (void)printArrItemWith:(NSArray *)arr{
+    for (NSInteger i = 0; i<arr.count; i++) {
+        Person *item = [arr objectAtIndex:i];
+        NSLog(@"arr= %@, index = %ld, item = %@", arr, (long)i, item);
+    }
+}
 
+- (Person *)personWith:(NSInteger)pid name:(NSString *)name{
+    Person *p = [Person new];
+    p.pid = pid;
+    p.name = name;
+    return p;
+}
 
 #pragma mark - CreateTimer
 - (void)createTimer{

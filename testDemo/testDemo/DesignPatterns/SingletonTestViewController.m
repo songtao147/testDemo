@@ -24,6 +24,11 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     NSLog(@"SingletonTestResult: %@, %@, %@", [SingleObject sharedObject], [[SingleObject alloc] init], [SingleObject new]);
+    
+    
+    
+    
+    
 }
 
 /*

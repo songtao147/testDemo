@@ -4,13 +4,15 @@
 //
 //  Created by songtao on 2018/10/31.
 //  Copyright © 2018 ryan. All rights reserved.
-//
+//  整理 动画特效demo 使用(https://github.com/ZLFighting/-ZLDemo)
 
 #import "AnimationsViewController.h"
 
 @interface AnimationsViewController ()
 
-@property (nonatomic) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *titleNames;
+
+@property (nonatomic, strong) NSMutableArray *classNames;
 
 @end
 
@@ -23,12 +25,25 @@ static NSString *reuseIdentifier = @"AnimationsCellReuseIdentifier";
     
     self.title = @"常见动画特效";
     
-    https://github.com/ZLFighting/-ZLDemo
-    _dataArr = [NSMutableArray arrayWithObjects:@"广播跑马灯" , @"弹幕动画", @"直播点赞动画", @"直播点赞图片动画", @"烟花动画", @"雪花动画", nil];
+    self.classNames = @[].mutableCopy;
+    self.titleNames = @[].mutableCopy;
+    
+    [self addTitle:@"广播跑马灯" class:@"Broadcasting"];
+    [self addTitle:@"弹幕动画" class:@"Barrage"];
+    [self addTitle:@"直播点赞动画" class:@"LiveHeart"];
+    [self addTitle:@"直播点赞图片动画" class:@"LikePicture"];
+    [self addTitle:@"烟花动画" class:@"Fireworks"];
+    [self addTitle:@"雪花动画" class:@"Snowflake"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];//必需注册
     self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorInset = UIEdgeInsetsZero;
+}
+
+- (void)addTitle:(NSString *)title class:(NSString *)className {
+    
+    [self.classNames addObject:className];
+    [self.titleNames addObject:title];
 }
 
 #pragma mark - Table view data source
@@ -40,7 +55,7 @@ static NSString *reuseIdentifier = @"AnimationsCellReuseIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return _dataArr.count;
+    return _titleNames.count;
 }
 
 
@@ -48,11 +63,22 @@ static NSString *reuseIdentifier = @"AnimationsCellReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [_dataArr objectAtIndex:indexPath.row];
+    cell.textLabel.text = [_titleNames objectAtIndex:indexPath.row];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    NSString *classString = [NSString stringWithFormat:@"%@ViewController", _classNames[indexPath.row]];
+    Class cls = NSClassFromString(classString);
+    if (cls) {
+        UIViewController *controller = [[cls alloc] init];
+        controller.title = [_titleNames objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

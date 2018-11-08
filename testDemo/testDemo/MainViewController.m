@@ -10,7 +10,9 @@
 
 @interface MainViewController ()
 
-@property (nonatomic) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *titleNames;
+
+@property (nonatomic, strong) NSMutableArray *classNames;
 
 @end
 
@@ -28,23 +30,25 @@ static NSString *reuseIdentifier = @"MainTableViewCellReuseIdentifier";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"测试demo";    
     
-    _dataArr = [NSMutableArray array];
+    self.classNames = @[].mutableCopy;
+    self.titleNames = @[].mutableCopy;
     
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"测试页面", @"Test", nil];
-    [_dataArr addObject:dic];
-    NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:@"登录相关(验证码、支付密码输入)", @"LoginTest", nil];
-    [_dataArr addObject:dic1];
-    NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:@"常见动画特效", @"Animations", nil];
-    [_dataArr addObject:dic2];
-    NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:@"文本转语音（英语翻译）", @"TTS", nil];
-    [_dataArr addObject:dic3];
-    NSDictionary *dic4 = [NSDictionary dictionaryWithObjectsAndKeys:@"设计模式", @"DesignPatterns", nil];
-    [_dataArr addObject:dic4];
-    
+    [self addTitle:@"测试页面" class:@"Test"];
+    [self addTitle:@"登录相关(验证码、支付密码输入)" class:@"LoginTest"];
+    [self addTitle:@"常见动画特效" class:@"Animations"];
+    [self addTitle:@"文本转语音（英语翻译）" class:@"TTS"];
+    [self addTitle:@"设计模式" class:@"DesignPatterns"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];//必需注册
     self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorInset = UIEdgeInsetsZero;
+}
+
+#pragma mark - 创建表格数据源
+- (void)addTitle:(NSString *)title class:(NSString *)className {
+    
+    [self.classNames addObject:className];
+    [self.titleNames addObject:title];
 }
 
 #pragma mark - Table view data source
@@ -56,7 +60,7 @@ static NSString *reuseIdentifier = @"MainTableViewCellReuseIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return _dataArr.count;
+    return _titleNames.count;
 }
 
 
@@ -64,8 +68,7 @@ static NSString *reuseIdentifier = @"MainTableViewCellReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    NSDictionary *dic = [_dataArr objectAtIndex:indexPath.row];
-    cell.textLabel.text = dic.allValues.firstObject;
+    cell.textLabel.text = [_titleNames objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -73,8 +76,7 @@ static NSString *reuseIdentifier = @"MainTableViewCellReuseIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSDictionary *dic = [_dataArr objectAtIndex:indexPath.row];
-    NSString *classString = [NSString stringWithFormat:@"%@ViewController", dic.allKeys.firstObject];
+    NSString *classString = [NSString stringWithFormat:@"%@ViewController", _classNames[indexPath.row]];
     Class cls = NSClassFromString(classString);
     UIViewController *controller = [[cls alloc] init];
     [self.navigationController pushViewController:controller animated:YES];

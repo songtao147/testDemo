@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5636A7D521927CCB007CEE97 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7D421927CCB007CEE97 /* Person.m */; };
+		5636A7D9219409D8007CEE97 /* BroadcastingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7D8219409D8007CEE97 /* BroadcastingViewController.m */; };
+		5636A7DD21940AFD007CEE97 /* BarrageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7DC21940AFD007CEE97 /* BarrageViewController.m */; };
+		5636A7E321940C8A007CEE97 /* NSString+XHHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7E221940C8A007CEE97 /* NSString+XHHExtension.m */; };
+		5636A7E621940D4E007CEE97 /* ZLScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7E521940D4E007CEE97 /* ZLScrollLabelView.m */; };
+		5636A7EA21940EC7007CEE97 /* LiveHeartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7E921940EC7007CEE97 /* LiveHeartViewController.m */; };
+		5636A7ED21940F1C007CEE97 /* ZLLiveHeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7EC21940F1C007CEE97 /* ZLLiveHeartView.m */; };
+		5636A7F121941048007CEE97 /* LikePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7F021941048007CEE97 /* LikePictureViewController.m */; };
+		5636A7F3219410DE007CEE97 /* resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5636A7F2219410DE007CEE97 /* resource.bundle */; };
+		5636A7F621941142007CEE97 /* ZLLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7F521941142007CEE97 /* ZLLikeAnimation.m */; };
+		5636A7FA2194125C007CEE97 /* FireworksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A7F92194125C007CEE97 /* FireworksViewController.m */; };
+		5636A7FC219412EA007CEE97 /* fireworks@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5636A7FB219412EA007CEE97 /* fireworks@2x.png */; };
+		5636A7FE219412F7007CEE97 /* ring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5636A7FD219412F7007CEE97 /* ring@2x.png */; };
+		5636A80221941350007CEE97 /* SnowflakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5636A80121941350007CEE97 /* SnowflakeViewController.m */; };
+		5636A805219413A1007CEE97 /* snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5636A803219413A1007CEE97 /* snow@2x.png */; };
+		5636A806219413A1007CEE97 /* alpha@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5636A804219413A1007CEE97 /* alpha@2x.png */; };
 		5644F8EA21884A98002911BA /* LoginTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8E921884A98002911BA /* LoginTestViewController.m */; };
 		5644F8EF21884B77002911BA /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8EE21884B77002911BA /* CaptchaView.m */; };
 		5644F8F2218995BB002911BA /* PaySafePwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644F8F1218995BB002911BA /* PaySafePwdView.m */; };
@@ -39,6 +55,33 @@
 /* Begin PBXFileReference section */
 		1B2B99A6273BA5651ED76F32 /* libPods-testDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		342532960FA2DDE9977C7DF6 /* Pods-testDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testDemo/Pods-testDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5636A7D321927CCB007CEE97 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5636A7D421927CCB007CEE97 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5636A7D7219409D8007CEE97 /* BroadcastingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BroadcastingViewController.h; sourceTree = "<group>"; };
+		5636A7D8219409D8007CEE97 /* BroadcastingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BroadcastingViewController.m; sourceTree = "<group>"; };
+		5636A7DB21940AFD007CEE97 /* BarrageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarrageViewController.h; sourceTree = "<group>"; };
+		5636A7DC21940AFD007CEE97 /* BarrageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarrageViewController.m; sourceTree = "<group>"; };
+		5636A7E121940C8A007CEE97 /* NSString+XHHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+XHHExtension.h"; sourceTree = "<group>"; };
+		5636A7E221940C8A007CEE97 /* NSString+XHHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHHExtension.m"; sourceTree = "<group>"; };
+		5636A7E421940D4E007CEE97 /* ZLScrollLabelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLScrollLabelView.h; sourceTree = "<group>"; };
+		5636A7E521940D4E007CEE97 /* ZLScrollLabelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLScrollLabelView.m; sourceTree = "<group>"; };
+		5636A7E821940EC7007CEE97 /* LiveHeartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveHeartViewController.h; sourceTree = "<group>"; };
+		5636A7E921940EC7007CEE97 /* LiveHeartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveHeartViewController.m; sourceTree = "<group>"; };
+		5636A7EB21940F1C007CEE97 /* ZLLiveHeartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLiveHeartView.h; sourceTree = "<group>"; };
+		5636A7EC21940F1C007CEE97 /* ZLLiveHeartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLiveHeartView.m; sourceTree = "<group>"; };
+		5636A7EF21941048007CEE97 /* LikePictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LikePictureViewController.h; sourceTree = "<group>"; };
+		5636A7F021941048007CEE97 /* LikePictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LikePictureViewController.m; sourceTree = "<group>"; };
+		5636A7F2219410DE007CEE97 /* resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = resource.bundle; sourceTree = "<group>"; };
+		5636A7F421941142007CEE97 /* ZLLikeAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLLikeAnimation.h; sourceTree = "<group>"; };
+		5636A7F521941142007CEE97 /* ZLLikeAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLLikeAnimation.m; sourceTree = "<group>"; };
+		5636A7F82194125C007CEE97 /* FireworksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksViewController.h; sourceTree = "<group>"; };
+		5636A7F92194125C007CEE97 /* FireworksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksViewController.m; sourceTree = "<group>"; };
+		5636A7FB219412EA007CEE97 /* fireworks@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fireworks@2x.png"; sourceTree = "<group>"; };
+		5636A7FD219412F7007CEE97 /* ring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ring@2x.png"; sourceTree = "<group>"; };
+		5636A80021941350007CEE97 /* SnowflakeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnowflakeViewController.h; sourceTree = "<group>"; };
+		5636A80121941350007CEE97 /* SnowflakeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowflakeViewController.m; sourceTree = "<group>"; };
+		5636A803219413A1007CEE97 /* snow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow@2x.png"; sourceTree = "<group>"; };
+		5636A804219413A1007CEE97 /* alpha@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alpha@2x.png"; sourceTree = "<group>"; };
 		5644F8E821884A98002911BA /* LoginTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTestViewController.h; sourceTree = "<group>"; };
 		5644F8E921884A98002911BA /* LoginTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTestViewController.m; sourceTree = "<group>"; };
 		5644F8ED21884B77002911BA /* CaptchaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
@@ -104,6 +147,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5636A7D6219409A2007CEE97 /* Broadcasting */ = {
+			isa = PBXGroup;
+			children = (
+				5636A7D7219409D8007CEE97 /* BroadcastingViewController.h */,
+				5636A7D8219409D8007CEE97 /* BroadcastingViewController.m */,
+			);
+			path = Broadcasting;
+			sourceTree = "<group>";
+		};
+		5636A7DA21940AED007CEE97 /* Barrage */ = {
+			isa = PBXGroup;
+			children = (
+				5636A7DB21940AFD007CEE97 /* BarrageViewController.h */,
+				5636A7DC21940AFD007CEE97 /* BarrageViewController.m */,
+				5636A7E421940D4E007CEE97 /* ZLScrollLabelView.h */,
+				5636A7E521940D4E007CEE97 /* ZLScrollLabelView.m */,
+				5636A7E121940C8A007CEE97 /* NSString+XHHExtension.h */,
+				5636A7E221940C8A007CEE97 /* NSString+XHHExtension.m */,
+			);
+			path = Barrage;
+			sourceTree = "<group>";
+		};
+		5636A7E721940EB3007CEE97 /* LiveHeart */ = {
+			isa = PBXGroup;
+			children = (
+				5636A7E821940EC7007CEE97 /* LiveHeartViewController.h */,
+				5636A7E921940EC7007CEE97 /* LiveHeartViewController.m */,
+				5636A7EB21940F1C007CEE97 /* ZLLiveHeartView.h */,
+				5636A7EC21940F1C007CEE97 /* ZLLiveHeartView.m */,
+			);
+			path = LiveHeart;
+			sourceTree = "<group>";
+		};
+		5636A7EE21941036007CEE97 /* LikePicture */ = {
+			isa = PBXGroup;
+			children = (
+				5636A7F2219410DE007CEE97 /* resource.bundle */,
+				5636A7EF21941048007CEE97 /* LikePictureViewController.h */,
+				5636A7F021941048007CEE97 /* LikePictureViewController.m */,
+				5636A7F421941142007CEE97 /* ZLLikeAnimation.h */,
+				5636A7F521941142007CEE97 /* ZLLikeAnimation.m */,
+			);
+			path = LikePicture;
+			sourceTree = "<group>";
+		};
+		5636A7F72194124E007CEE97 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				5636A7FB219412EA007CEE97 /* fireworks@2x.png */,
+				5636A7FD219412F7007CEE97 /* ring@2x.png */,
+				5636A7F82194125C007CEE97 /* FireworksViewController.h */,
+				5636A7F92194125C007CEE97 /* FireworksViewController.m */,
+			);
+			path = Fireworks;
+			sourceTree = "<group>";
+		};
+		5636A7FF21941321007CEE97 /* Snowflake */ = {
+			isa = PBXGroup;
+			children = (
+				5636A804219413A1007CEE97 /* alpha@2x.png */,
+				5636A803219413A1007CEE97 /* snow@2x.png */,
+				5636A80021941350007CEE97 /* SnowflakeViewController.h */,
+				5636A80121941350007CEE97 /* SnowflakeViewController.m */,
+			);
+			path = Snowflake;
+			sourceTree = "<group>";
+		};
 		5644F8E721884A71002911BA /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +248,12 @@
 			children = (
 				5644F8F721899C90002911BA /* AnimationsViewController.h */,
 				5644F8F821899C90002911BA /* AnimationsViewController.m */,
+				5636A7FF21941321007CEE97 /* Snowflake */,
+				5636A7F72194124E007CEE97 /* Fireworks */,
+				5636A7EE21941036007CEE97 /* LikePicture */,
+				5636A7E721940EB3007CEE97 /* LiveHeart */,
+				5636A7DA21940AED007CEE97 /* Barrage */,
+				5636A7D6219409A2007CEE97 /* Broadcasting */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -251,6 +367,8 @@
 				56ADE6AF215CA2ED0080B118 /* MainViewController.m */,
 				56F63569217971370059BFA0 /* TestViewController.h */,
 				56F6356A217971370059BFA0 /* TestViewController.m */,
+				5636A7D321927CCB007CEE97 /* Person.h */,
+				5636A7D421927CCB007CEE97 /* Person.m */,
 				56CB399C218C1908005C8A65 /* DesignPatterns */,
 				5644F8F321899B4E002911BA /* Animations */,
 				5644F8E721884A71002911BA /* Login */,
@@ -368,9 +486,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5636A805219413A1007CEE97 /* snow@2x.png in Resources */,
+				5636A7FE219412F7007CEE97 /* ring@2x.png in Resources */,
 				56B88DEF1F5FC0E90057A631 /* LaunchScreen.storyboard in Resources */,
 				56ADE6A8215CA1E90080B118 /* dele.png in Resources */,
 				56B88DEC1F5FC0E90057A631 /* Assets.xcassets in Resources */,
+				5636A806219413A1007CEE97 /* alpha@2x.png in Resources */,
+				5636A7F3219410DE007CEE97 /* resource.bundle in Resources */,
+				5636A7FC219412EA007CEE97 /* fireworks@2x.png in Resources */,
 				56ADE6E1215F81120080B118 /* MySliderView.xib in Resources */,
 				56B88DEA1F5FC0E90057A631 /* Main.storyboard in Resources */,
 			);
@@ -425,7 +548,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				56ADE6C6215CDE050080B118 /* SuspensionDisplayView.m in Sources */,
+				5636A7EA21940EC7007CEE97 /* LiveHeartViewController.m in Sources */,
 				56B88DE71F5FC0E90057A631 /* ViewController.m in Sources */,
+				5636A7F621941142007CEE97 /* ZLLikeAnimation.m in Sources */,
+				5636A7D521927CCB007CEE97 /* Person.m in Sources */,
 				56F6356B217971380059BFA0 /* TestViewController.m in Sources */,
 				56ADE6B4215CA7870080B118 /* BaiduFanYiTool.m in Sources */,
 				56ADE6B0215CA2ED0080B118 /* MainViewController.m in Sources */,
@@ -433,16 +559,24 @@
 				5644F8EF21884B77002911BA /* CaptchaView.m in Sources */,
 				56ADE6A9215CA1E90080B118 /* MyTextView.m in Sources */,
 				56ADE6DF215F80F20080B118 /* MySliderView.m in Sources */,
+				5636A7E621940D4E007CEE97 /* ZLScrollLabelView.m in Sources */,
 				56B88DE41F5FC0E90057A631 /* AppDelegate.m in Sources */,
 				56CB399F218C192E005C8A65 /* SingleObject.m in Sources */,
 				56ADE6CF215E18B30080B118 /* SpeechSettingController.m in Sources */,
+				5636A7D9219409D8007CEE97 /* BroadcastingViewController.m in Sources */,
 				56CB39A9218C5126005C8A65 /* SingletonTestViewController.m in Sources */,
+				5636A7F121941048007CEE97 /* LikePictureViewController.m in Sources */,
 				56ADE6BF215CC59C0080B118 /* NSString+Encryption.m in Sources */,
+				5636A7E321940C8A007CEE97 /* NSString+XHHExtension.m in Sources */,
 				5644F8F2218995BB002911BA /* PaySafePwdView.m in Sources */,
 				56ADE6B8215CAA830080B118 /* MyNetWorkManage.m in Sources */,
+				5636A7ED21940F1C007CEE97 /* ZLLiveHeartView.m in Sources */,
 				5644F8EA21884A98002911BA /* LoginTestViewController.m in Sources */,
+				5636A7FA2194125C007CEE97 /* FireworksViewController.m in Sources */,
 				56ADE6CC215E146A0080B118 /* UIView+Layout.m in Sources */,
 				56B88DE11F5FC0E90057A631 /* main.m in Sources */,
+				5636A7DD21940AFD007CEE97 /* BarrageViewController.m in Sources */,
+				5636A80221941350007CEE97 /* SnowflakeViewController.m in Sources */,
 				56ADE6AD215CA1F50080B118 /* TTSViewController.m in Sources */,
 				56CB39A6218C5066005C8A65 /* DesignPatternsViewController.m in Sources */,
 			);

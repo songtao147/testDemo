@@ -25,7 +25,7 @@ static NSString *reuseIdentifier = @"DesignPatternsCellReuseIdentifier";
     
     _dataArr = [NSMutableArray array];
     
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"单利模式", @"SingletonTest", nil];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"单例模式", @"SingletonTest", nil];
     [_dataArr addObject:dic];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];//必需注册
